@@ -39,8 +39,8 @@ def set_token(token: str, source: str):
 headers = {
     "User-Agent": "okhttp/3.11.0",
     "Content-Type": "application/x-www-form-urlencoded",
-    "devCode": random_string(40),
+    "devCode": "D730C36786CD7C0FCCE45085307AEC764590B9A8",
     "source": "android",
-    "version": "2.2.5",
-    "versionCode": "2250",
+    "version": "2.4.4",
+    "versionCode": "2440",
 }
