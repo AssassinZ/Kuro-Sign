@@ -32,12 +32,12 @@ jobs:
       run: |
         pip install -r requirements.txt
     - name: Run script
-      # env:
-      #   Kuro_Token: ${{ secrets.KURO_TOKEN }}
-        # Kuro_BbsSign: ${{ vars.KURO_BBSSIGN }}
-        # Kuro_LookPost: ${{ vars.KURO_LOOKPOST }}
-        # Kuro_LikePost: ${{ vars.KURO_LIKEPOST }}
-        # Kuro_SharePost: ${{ vars.KURO_SHAREPOST }}
-        # Kuro_SignGame: ${{ vars.KURO_SIGNGAME }}
-        # Kuro_Source: ${{ vars.KURO_SOURCE }}
+      env:
+        Kuro_Token: ${{ secrets.KURO_TOKEN }}
+        Kuro_BbsSign: ${{ vars.KURO_BBSSIGN }}
+        Kuro_LookPost: ${{ vars.KURO_LOOKPOST }}
+        Kuro_LikePost: ${{ vars.KURO_LIKEPOST }}
+        Kuro_SharePost: ${{ vars.KURO_SHAREPOST }}
+        Kuro_SignGame: ${{ vars.KURO_SIGNGAME }}
+        Kuro_Source: ${{ vars.KURO_SOURCE }}
       run: python main.py
