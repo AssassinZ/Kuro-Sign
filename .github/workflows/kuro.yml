@@ -34,10 +34,10 @@ jobs:
     - name: Run script
       env:
         Kuro_Token: ${{ secrets.KURO_TOKEN }}
-        Kuro_BbsSign: ${{ variables.KURO_BBSSIGN }}
-        Kuro_LookPost: ${{ variables.KURO_LOOKPOST }}
-        Kuro_LikePost: ${{ variables.KURO_LIKEPOST }}
-        Kuro_SharePost: ${{ variables.KURO_SHAREPOST }}
-        Kuro_SignGame: ${{ variables.KURO_SIGNGAME }}
-        Kuro_Source: ${{ variables.KURO_SOURCE }}
+        Kuro_BbsSign: ${{ vars.KURO_BBSSIGN }}
+        Kuro_LookPost: ${{ vars.KURO_LOOKPOST }}
+        Kuro_LikePost: ${{ vars.KURO_LIKEPOST }}
+        Kuro_SharePost: ${{ vars.KURO_SHAREPOST }}
+        Kuro_SignGame: ${{ vars.KURO_SIGNGAME }}
+        Kuro_Source: ${{ vars.KURO_SOURCE }}
       run: python main.py
