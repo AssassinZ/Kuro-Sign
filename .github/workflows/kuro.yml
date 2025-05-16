@@ -33,6 +33,11 @@ jobs:
         pip install -r requirements.txt
     - name: Run script
       env:
-        COOKIE: ${{ secrets.COOKIE }}
-        devCode: ${{ secrets.devCode }}
-      run: python mcMain.py
+        Kuro_Token: ${{ secrets.KURO_TOKEN }}
+        Kuro_BbsSign: ${{ variables.KURO_BBSSIGN }}
+        Kuro_LookPost: ${{ variables.KURO_LOOKPOST }}
+        Kuro_LikePost: ${{ variables.KURO_LIKEPOST }}
+        Kuro_SharePost: ${{ variables.KURO_SHAREPOST }}
+        Kuro_SignGame: ${{ variables.KURO_SIGNGAME }}
+        Kuro_Source: ${{ variables.KURO_SOURCE }}
+      run: python main.py
