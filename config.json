@@ -4,6 +4,6 @@
     "LookPost": true,
     "LikePost": true,
     "SharePost": true,
-    "SignGame": "3",
+    "SignGame": "2|3",
     "Source": "android"
 }
