@@ -62,4 +62,4 @@ if __name__ == "__main__":
                     log(f"分享帖子：{share_status}")
             if time == 0:
                 log(f"{task['remark']}：已完成")
-    send("库街区", "\n".join(MESSAGE))
+    # send("库街区", "\n".join(MESSAGE))

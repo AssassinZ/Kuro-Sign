@@ -1,0 +1,43 @@
+name: 鸣潮签到
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  push:
+    tags:
+    - 'v*'
+  #  branches:
+  #    - master
+  schedule:
+    - cron: "1 16 * * *"
+  watch:
+    types: [started]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Show the timezone
+      run: |
+        echo "The timezone is $TZ"
+        date
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt
+    - name: Run script
+      env:
+        Kuro_Token: ${{ secrets.KURO_TOKEN }}
+        Kuro_BbsSign: ${{ vars.KURO_BBSSIGN }}
+        Kuro_LookPost: ${{ vars.KURO_LOOKPOST }}
+        Kuro_LikePost: ${{ vars.KURO_LIKEPOST }}
+        Kuro_SharePost: ${{ vars.KURO_SHAREPOST }}
+        Kuro_SignGame: ${{ vars.KURO_SIGNGAME }}
+        Kuro_Source: ${{ vars.KURO_SOURCE }}
+      run: python main.py
