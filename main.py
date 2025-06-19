@@ -11,6 +11,7 @@ name: 库街区签到任务
 定时规则
 cron: 1 9 * * *
 """
+import json
 from utils.mcUtil import mingchaoRefresh
 
 from notify import send
