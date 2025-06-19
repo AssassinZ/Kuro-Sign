@@ -11,6 +11,8 @@ name: 库街区签到任务
 定时规则
 cron: 1 9 * * *
 """
+from mcUtil import mingchaoRefresh
+
 from notify import send
 from utils.bbs_sign import (
     bbs_sign,
@@ -62,4 +64,9 @@ if __name__ == "__main__":
                     log(f"分享帖子：{share_status}")
             if time == 0:
                 log(f"{task['remark']}：已完成")
+
+        data = json.loads(str(mingchaoRefresh(token)))
+        print('>>>>>>>>>>>>>>>debug>>>>>>>>>>>>>>>\n'+str(mingchaoRefresh(token)+'\n>>>>>>>>>>>>>>>debug>>>>>>>>>>>>>>>'))
+        energyData = data['data']['energyData']['cur']
+        log(f"当前体力：{energyData}")
     # send("库街区", "\n".join(MESSAGE))
